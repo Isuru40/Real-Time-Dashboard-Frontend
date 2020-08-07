@@ -26,15 +26,15 @@ import { HttpClientModule } from '@angular/common/http';
     ChartsModule,
     HttpClientModule,
     MsAdalAngular6Module.forRoot({  
-      tenant: '341c02c3-f673-4429-b2db-5fa4a986e567',  
-      clientId: '5fac77c8-d6ee-4893-a555-7617aa9d3bd8',  
-      redirectUri: 'https://smartdashboard.azureedge.net/#/dashboard',  
+      tenant: '341c02c3-f673-4429-b2dbad-5fa4a986e567',  
+      clientId: '5fac77c8-d6ee-4893-a555ss-7617aa9d3bd8',  
+      redirectUri: 'https://smartdashboard45.azureedge.net/#/dashboard',  
       endpoints: {  
-        'api': '5fac77c8-d6ee-4893-a555-7617aa9d3bd8', // this is for feteching the access token  
+        'api': '5fac77c8-d6ee-4893-a555xww-7617aa9dc3bd8', // this is for feteching the access token  
       },  
       navigateToLoginRequestUrl: false,  
       cacheLocation: 'localStorage',
-       postLogoutRedirectUri: 'https://smartdashboard.azureedge.net/#/login', 
+       postLogoutRedirectUri: 'https://smartdashboard45.azureedge.net/#/login', 
     }), 
   ],
   providers: [ChatService,DevicelogService,AuthenticationGuard],
