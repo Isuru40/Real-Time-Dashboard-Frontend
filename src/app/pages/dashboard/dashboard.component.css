@@ -1,0 +1,76 @@
+.head{
+
+    padding: 5%;
+
+}
+
+.main{
+ 
+     height: 100px !important; 
+   /* width: 1375px !important;  */
+    /* margin-right: 20%;  */
+    /* padding: 3%;
+    padding-top: 10%; */
+    margin-top: 2%;
+
+}
+.dash{
+
+    height: 360px !important;
+    border-radius: 15px;
+  
+
+}
+.threshold{
+    margin-top: 20% !important;
+}
+
+/* .on{
+    background-color: indianred;
+} */
+.btn-secondary:not(:disabled):not(.disabled).active{
+    background-color: #000;
+}
+
+.set-btn{
+
+    background-color: #000;   
+}
+
+.set-btn:hover {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000; }
+
+.control{
+
+    height: 100px !important; 
+    margin-top: -2%;
+
+}
+#chart {
+    max-width: 650px;
+    margin: 35px auto;
+  }
+  
+ .login-btn {
+    padding: 13px 20px 12px;
+    background-color: #000;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: -22px !important;
+ }
+
+    .login-btn:hover {
+        border: 1px solid #000;
+        background-color: transparent;
+        color: #000; }
+
+   .outbtn{
+
+    margin-top: 3%;
+
+   }     

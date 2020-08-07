@@ -1,0 +1,158 @@
+<div>
+    <div class="container-fluid">
+      <div class="head">
+        <div class="row control">
+          <div class="col-2 "> 
+            <img src="../../../assets/logo.png" alt="New York" class="logo" width="110%">
+          </div>
+          <div class="col-8 ">
+            <div class="card  ">
+
+              <marquee  direction="right" >
+                <div class="card-body">
+                  <!-- <span class="badge badge-dark"> {{today | date:'fullDate'}} {{today | date:'h:mm:ss a'}}</span> -->
+                  <span class="badge badge-dark"> {{today | date:'fullDate'}} {{today | date:'h:mm:ss a'}}</span>
+                  <span class="badge badge-info">{{this.username}}</span>
+               <span class="badge badge-success" [hidden]="!this.status" > {{this.message}}</span>
+                <span class="badge badge-warning" [hidden]="this.status"  > {{this.message}}</span>
+                <span class="badge badge-danger" [hidden]="( (((!this.tempthresholstatus) || (!this.humiditythresholstatus)) || (!this.status) ))" > {{this.eventmessage}}</span>
+                <span class="badge badge-light">Humidity Status: {{ this.humidity_condition}}</span>
+                 
+                </div>
+              </marquee>
+            
+            </div>
+          </div>
+          <div class="col-2 ">
+            <div class="card outbtn ">
+             
+                <input name="logout" id="login" class="btn btn-block login-btn mb-1" type="button" value="Log Out" (click)="logout()">
+          
+            </div>
+          </div>
+        </div>
+        <div class="row main">
+          <div class="col-6 ">
+            <div class="card dash ">
+              <div class="card-body">
+
+                <canvas baseChart width="200" height="100"
+                [datasets]="tempDataValue"
+                [labels]="tempDataLable"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [options]="countEventsOptions"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins">
+              </canvas>
+                <!-- <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div> -->
+
+              </div>
+            </div>
+          </div>
+          <div class="col-6 ">
+            <div class="card dash ">
+              <div class="card-body">
+
+                <canvas baseChart width="200" height="100"
+                [datasets]="hueDataValue"
+                [labels]="tempDataLable"
+                [colors]="lineChartColors1"
+                [legend]="lineChartLegend"
+                [options]="countEventsOptions"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins">
+              </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row main threshold">
+
+          <div class="col-1 "></div>
+          <div class="col-4 ">
+            <div class="row">
+              <div class="col-3 ">
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active on">
+                    <input type="radio" name="options" id="temp-off" autocomplete="off" (click)="temoOff()"  checked > OFF
+                  </label>
+                  <label class="btn btn-secondary off">
+                    <input type="radio" name="options" id="temp-on" autocomplete="off" (click)="temoON()" > ON
+                  </label>
+                </div>
+
+
+
+              </div>
+              <div class="col-3 ">
+
+                <input type="text" class="form-control" id="temperature" [disabled]="!this.tempthresholstatus">
+              </div>
+              <div class="col-3 ">
+
+                <button type="button" class="btn btn-success set-btn" [disabled]="!this.tempthresholstatus" (click)="tempset()">Set</button>
+
+              </div>
+              <div class="col-3 ">
+
+                <h6>Threshold set to : {{this.tempthresholdvalue}}</h6>
+
+              </div>
+         
+           
+          </div>
+          </div>
+          <div class="col-2 "></div>
+          <div class="col-4 ">
+
+            <div class="row">
+              
+              <div class="col-3 ">
+
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active on">
+                    <input type="radio" name="options" id="hum-off" autocomplete="off" (click)="humiOff()" checked> OFF
+                  </label>
+                  <label class="btn btn-secondary off">
+                    <input type="radio" name="options" id="hum-on" autocomplete="off" (click)="humiON()"> ON
+                  </label>
+                </div>
+
+
+
+              </div>
+              <div class="col-3 ">
+
+                <input type="text" class="form-control" id="humidity" [disabled]="!this.humiditythresholstatus"  >
+              </div>
+              <div class="col-2 ">
+
+                <button type="button" class="btn btn-success set-btn"  [disabled]="!this.humiditythresholstatus" (click)="humidityset()">Set</button>
+
+              </div>
+              <div class="col-3 ">
+
+                <h6>Threshold set to : {{this.humiditythresholdvalue}}</h6>
+
+              </div>
+              <div class="col-1 ">
+
+                <button type="button" class="btn btn-success set-btn"  (click)="humidityStatus()">Status</button>
+
+              </div>
+         
+           
+          </div>
+          </div>
+          
+          <div class="col-1 "></div>
+      
+    
+        </div>
+      </div>
+     
+      </div>
+
+</div>
